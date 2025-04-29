@@ -1,29 +1,36 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int binary_search(int arr[], int left,int right, int key) {
-   if(left > right) {
-      return -1; // Key not found
-   }
-    int mid = left + (right - left) / 2; // Calculate mid index
-    if(arr[mid] == key) {
+int binary_search(int arr[], int left, int right, int key)
+{
+    if (left > right)
+    {
+        return -1; // Key not found
+    }
+    int mid = (left + right) / 2; // Calculate mid index
+
+    if (arr[mid] == key)
+    {
         return mid; // Key found at index mid
-    } else if(arr[mid] > key) {
+    }
+    else if (arr[mid] > key)
+    {
         return binary_search(arr, left, mid - 1, key); // Search in left half
-    } else {
+    }
+    else
+    {
         return binary_search(arr, mid + 1, right, key); // Search in right half
     }
-
-
 }
 
 int main()
 {
-  int n,key,result, arr[10];
+    int n, key, result, arr[10];
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
     printf("Enter the elements of the array in sorted order:\n");
-    for(int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         scanf("%d", &arr[i]);
     }
     printf("Enter the key to search :");
@@ -31,11 +38,13 @@ int main()
 
     result = binary_search(arr, 0, n - 1, key); // Call binary search function
 
-    if(result == -1) {
+    if (result == -1)
+    {
         printf("Key not found in the array.\n"); // Key not found
-    } else {
+    }
+    else
+    {
         printf("Key found at index %d.\n", result); // Key found at index result
     }
     return 0; // Return success
-
 }
