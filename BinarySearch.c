@@ -1,37 +1,41 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int binary_search(int arr[], int size, int key) {
-    int left = 0;
-    int right = size - 1;
-
-    while (left <= right) {
-        int mid = left + (right - left) / 2; // To prevent overflow
-
-        if (arr[mid] == key) {
-            return mid; // Target found at index mid
-        } else if (arr[mid] < key) {
-            left = mid + 1; // Search in the right half
-        } else {
-            right = mid - 1; // Search in the left half
-        }
+int binary_search(int arr[], int left,int right, int key) {
+   if(left > right) {
+      return -1; // Key not found
+   }
+    int mid = left + (right - left) / 2; // Calculate mid index
+    if(arr[mid] == key) {
+        return mid; // Key found at index mid
+    } else if(arr[mid] > key) {
+        return binary_search(arr, left, mid - 1, key); // Search in left half
+    } else {
+        return binary_search(arr, mid + 1, right, key); // Search in right half
     }
 
-    return -1; // Target not found
+
 }
+
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int key = 5;
-    int result = binary_search(arr, size, key);
-
-    if (result != -1) {
-        printf("Element found at index: %d\n", result);
-    } else {
-        printf("Element not found in the array.\n");
+  int n,key,result, arr[10];
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    printf("Enter the elements of the array in sorted order:\n");
+    for(int i=0; i<n; i++) {
+        scanf("%d", &arr[i]);
     }
+    printf("Enter the key to search :");
+    scanf("%d", &key);
 
-    return 0;
+    result = binary_search(arr, 0, n - 1, key); // Call binary search function
+
+    if(result == -1) {
+        printf("Key not found in the array.\n"); // Key not found
+    } else {
+        printf("Key found at index %d.\n", result); // Key found at index result
+    }
+    return 0; // Return success
+
 }
-//       break;
