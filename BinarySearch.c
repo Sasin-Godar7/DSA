@@ -22,6 +22,7 @@ int binary_search(int arr[], int left, int right, int key)
         return binary_search(arr, mid + 1, right, key); // Search in right half
     }
 }
+// Main function to test binary search
 
 int main()
 {
