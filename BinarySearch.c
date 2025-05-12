@@ -26,6 +26,7 @@ int binary_search(int arr[], int left, int right, int key)
 
 // This function takes an array, the left and right indices, and the key to search for
 // It returns the index of the key if found, otherwise -1
+// The function uses recursion to divide the array into halves and search for the key
 
 int main()
 {
