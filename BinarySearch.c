@@ -23,6 +23,7 @@ int binary_search(int arr[], int left, int right, int key)
     }
 }
 // Main function to test binary search
+// This function takes an array, the left and right indices, and the key to search for
 
 int main()
 {
