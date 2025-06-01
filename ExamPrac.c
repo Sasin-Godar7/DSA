@@ -1,5 +1,5 @@
 #include<stdio.h>
-# 
+#define SIZE 100 // Define maximum size of stack
 void push();
 void pop();
 void display();
@@ -50,5 +50,33 @@ void push()
     top++;
     stack[top] = data;
     printf("Element %d pushed onto stack.\n", data);
-    
+
+}
+
+void pop()
+{
+    int data;
+    if (top == -1)
+    {
+        printf("Stack Underflow! Cannot pop element.\n");
+        return;
+    }
+    int data = stack[top];
+    top--;
+    printf("Element %d popped from stack.\n", data);
+    return data;
+}
+void display()
+{
+    if (top == -1)
+    {
+        printf("Stack is empty! Nothing to display.\n");
+        return;
+    }
+    printf("Stack elements are: ");
+    for (int i = top; i >= 0; i--)
+    {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
 }
