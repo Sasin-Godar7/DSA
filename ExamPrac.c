@@ -37,4 +37,18 @@ int main()
         }
     }
 }
-
+void push()
+{
+    int data ;
+    if(top == SIZE - 1)
+    {
+        printf("Stack Overflow! Cannot push %d\n", data);
+        return;
+    }
+    printf("Enter the element to push: ");
+    scanf("%d", &data);
+    top++;
+    stack[top] = data;
+    printf("Element %d pushed onto stack.\n", data);
+    
+}
