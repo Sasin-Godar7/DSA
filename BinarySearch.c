@@ -30,7 +30,7 @@ int binary_search(int arr[], int left, int right, int key)
 
 int main()
 {
-    int n, key, result, arr[10];
+    int n, key, result, arr[n];
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
     printf("Enter the elements of the array in sorted order:\n");
