@@ -6,7 +6,7 @@ int main()
 {
     int result, n, key;
     printf("enter the size of an array :");
-    scanf("%d", n);
+    scanf("%d",&n);
     int arr[n];
 
     printf("\nenter the elements in an array :");
@@ -38,9 +38,10 @@ int linearSearch(int arr[], int n, int key)
         {
             return i;
         }
-        else
+        
+    }
+    else
         {
             return -1;
         }
-    }
 }
