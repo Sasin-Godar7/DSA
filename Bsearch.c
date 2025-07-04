@@ -1,5 +1,7 @@
 #include <stdio.h>
-// int binarySearch(int left , int right, int mid, int key );
+
+
+int binarySearch(int arr[], int left, int right, int key);
 
 int main()
 {
@@ -18,6 +20,15 @@ int main()
     scanf("%d", &key);
 
     int result = binarySearch(arr, 0, n - 1, key);
+
+   if (result!=-1)
+   {
+    printf("\n element found in the index %d",result);
+   }
+   else
+   {
+    printf("\n the element does not found sorry ;( ");
+   }
 }
 
 int binarySearch(int arr[], int left, int right, int key)
