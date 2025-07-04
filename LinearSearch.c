@@ -40,8 +40,7 @@ int linearSearch(int arr[], int n, int key)
         }
         
     }
-    else
-        {
+
             return -1;
-        }
+      
 }
