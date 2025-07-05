@@ -64,7 +64,7 @@ void push()
     }
 }
 
-// performing pop 
+// performing pop operation
 
 void pop()
 {
