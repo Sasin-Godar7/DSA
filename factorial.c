@@ -9,7 +9,7 @@ int main()
 
     int result = fact(num);
 
-    printf("the factorial of %d is %d",num,result);
+    printf("\nthe factorial of %d is %d",num,result);
 
 }
 
@@ -17,7 +17,7 @@ int fact(int num)
 {
     if ( num == 0 || num == 1)
     {
-        return 0;
+        return 1;
     }
     else
     {
