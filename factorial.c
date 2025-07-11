@@ -3,29 +3,27 @@ int fact(int);
 int main()
 
 {
-    int n, f;
-    printf("enter the number ");
-    scanf("%d", &n);
+    int num;
+    printf("enter the number to find the factorial :");
+    scanf("%d",&num);
 
-    f = fact(n);
-    printf("factoral of %d is %d", n, f);
+    int result = fact(num);
+
+    printf("the factorial of %d is %d",num,result);
+
 }
 
-int fact(int n)
+int fact(int num)
 {
-    if (n == 0)
+    if ( num == 0 || num == 1)
     {
-        return 1;
-    }
-    else if (n == 1)
-    {
-        return 1;
+        return 0;
     }
     else
     {
-        return n * (n - 1);
+        return num * fact(num -1);
     }
+    
 }
-
 
 
