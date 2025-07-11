@@ -1,22 +1,35 @@
-#include<stdio.h>
-#include<stdlib.h>
-void hanoi(int , char , char , char );
+#include <stdio.h>
 
+// Function declaration (IMPORTANT!)
+void towerOfHanoi(int n, char from, char to, char aux);
 
 int main()
 {
-    hanoi(3,'A','B','C');
+    int n;
+    printf("How many disks? ");
+    scanf("%d", &n);
+
+    printf("\nSteps to move %d disks:\n", n);
+    towerOfHanoi(n, 'A', 'C', 'B');  // A = source, C = destination, B = auxiliary
+
     return 0;
 }
 
-void hanoi(int n,char rodFrom,char rodMiddle,char rodTo)
+// Function definition
+void towerOfHanoi(int n, char from, char to, char aux)
 {
-    if(n==1)
+    if (n == 1)
     {
-        printf("disk 1 moved from %c to %c\n",rodFrom,rodTo);
-        return ;
+        printf("Move disk 1 from %c to %c\n", from, to);
+        return;
     }
-    hanoi (n-1,rodFrom,rodTo,rodMiddle);
-    printf("disk %d moved from %c to %c \n",n,rodFrom,rodTo);
-    hanoi(n-1,rodMiddle,rodFrom,rodTo);
-}  
+
+    // Step 1: Move n-1 disks from source to auxiliary
+    towerOfHanoi(n - 1, from, aux, to);
+
+    // Step 2: Move nth disk from source to destination
+    printf("Move disk %d from %c to %c\n", n, from, to);
+
+    // Step 3: Move n-1 disks from auxiliary to destination
+    towerOfHanoi(n - 1, aux, to, from);
+}
