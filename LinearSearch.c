@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int linearSearch(int arr[], int n, int key);  // 👈 optional but good habit
+// int linearSearch(int arr[], int n, int key);  // 👈 optional but good habit
 
 int linearSearch(int arr[], int n, int key)
 {
